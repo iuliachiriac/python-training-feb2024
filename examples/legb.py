@@ -26,8 +26,9 @@ class MyClass:
     pass
 
 
-# sum = 0  # shadowing
-func(2)
+if __name__ == "__main__":
+    # sum = 0  # shadowing
+    func(2)
 
-print("Built-in names:", sum, print, int)
-print("Global names:", X, func, MyClass)
+    print("Built-in names:", sum, print, int)
+    print("Global names:", X, func, MyClass)

@@ -5,13 +5,6 @@ def modify_str(obj):
     print('inside function:', obj)
 
 
-print("----strings----")
-my_str = "ceva"
-print('id(my_str) =', id(my_str))
-modify_str(my_str)
-print('outside function:', my_str)
-
-
 def modify_list(obj):
     print('id(obj) =', id(obj))
     obj += [5, 6]  # the list object is modified
@@ -19,8 +12,15 @@ def modify_list(obj):
     print('inside function:', obj)
 
 
-print("----lists----")
-my_list = [1, 2, 3]
-print('id(my_list) =', id(my_list))
-modify_str(my_list)
-print('outside function:', my_list)
+if __name__ == "__main__":
+    print("----strings----")
+    my_str = "ceva"
+    print('id(my_str) =', id(my_str))
+    modify_str(my_str)
+    print('outside function:', my_str)
+
+    print("----lists----")
+    my_list = [1, 2, 3]
+    print('id(my_list) =', id(my_list))
+    modify_str(my_list)
+    print('outside function:', my_list)
