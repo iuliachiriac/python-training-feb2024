@@ -7,6 +7,7 @@ from legb import MyClass, func as legb_func
 import pypackage.pymodule
 # from pypackage import pymodule
 
+print(f"The name of imports.py module is {__name__}")
 
 print(sys.path)
 

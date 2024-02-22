@@ -88,6 +88,12 @@ def get_longer_words(*words, n=-1):
     return long_words
 
 
+def get_longer_words_v2(*words, n=None):
+    if n is None:
+        return list(words)  # return early pattern
+    return [word for word in words if len(word) > n]
+
+
 print(get_longer_words('hello', 'hi', 'bye', n=2))
 print(get_longer_words('hello', 'hi', ''))
 print(get_longer_words())
