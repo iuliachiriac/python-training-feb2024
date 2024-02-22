@@ -3,6 +3,8 @@ X = "X"
 
 def func(a):
     b = 1
+    global X
+    X = "AAA"
 
     def inner(c):
         d = 11
