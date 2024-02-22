@@ -3,11 +3,14 @@ X = "X"
 
 def func(a):
     b = 1
-    global X
-    X = "AAA"
+    # global X  # access modifier used to change global variables
+    # X = "AAA"
 
     def inner(c):
         d = 11
+
+        # nonlocal b  # access modifier used to change outer scope variables
+        # b = 11111
 
         print("Built-in names:", sum, print, int)
         print("Global names:", X, func, MyClass)
