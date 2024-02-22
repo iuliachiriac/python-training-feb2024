@@ -50,4 +50,21 @@ tuples = []
 for idx in range(min(len(names), len(ages))):
     tuples.append((names[idx], ages[idx]))
 
-print('List of tuples:', tuples)
+print('1. List of tuples:', tuples)
+
+
+tuples = []
+
+for idx, name in enumerate(names):
+    tuples.append((name, ages[idx]))
+
+print('2. List of tuples:', tuples)
+
+
+tuples = []
+
+for tup in zip(names, ages):
+    tuples.append(tup)
+
+print('3. List of tuples:', tuples)
+
