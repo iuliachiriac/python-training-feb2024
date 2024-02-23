@@ -1,4 +1,5 @@
 from datetime import date
+import random
 
 
 class Person:
@@ -47,8 +48,28 @@ class Person:
         return self.date_of_birth > other.date_of_birth
 
 
+class Student(Person):
+    count = 0
+
+    def __init__(self, name, date_of_birth, university):
+        super().__init__(name, date_of_birth)
+        self.university = university
+
+    def greet(self, greeting="hello"):
+        print(f"{greeting.capitalize()}! I am {self.name} and I study at "
+              f"{self.university}.")
+
+    def get_grade(self, subject):
+        return random.randint(2, 10)  # fetch grade from db
+
+    def __str__(self):
+        super_str = super().__str__()
+        return f"{super_str} (univ={self.university})"
+
+
 if __name__ == "__main__":
     p1 = Person("Anna", date(2000, 5, 1))
+
     print(p1.name, p1.count)  # get attribute
     p1.name = "Ana"  # set attribute
 
@@ -73,3 +94,13 @@ if __name__ == "__main__":
         p1.date_of_birth = date(1800, 5, 2)  # set attribute
     except ValueError as ex:
         print(f"Date of birth not changed: {ex} {p1.name}'s age: {p1.age}")
+
+    s1 = Student("Ion Popescu", date(2001, 7, 22), "Politehnica București")
+    s1.greet()
+    print(f"{s1.name} is {s1.age} years old and is a student at "
+          f"{s1.university} and got a {s1.get_grade('math')} in Math.")
+
+    print(s1)
+    print(Student.mro())  # method resolution order
+
+    print("Person count:", Person.count, "\nStudent count:", Student.count)
